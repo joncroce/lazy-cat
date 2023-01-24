@@ -8,5 +8,5 @@ const getById = async (req: Request, res: Response) => {
 };
 
 export default {
-	getById
-}
+  getById
+};
