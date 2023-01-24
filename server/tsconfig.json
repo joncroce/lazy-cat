@@ -1,14 +1,14 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "CommonJS",
     "strict": true,
     "baseUrl": "./",
     "outDir": "./dist",
     "sourceMap": true,
     "removeComments": true,
     "experimentalDecorators": true,
-    "target": "es6",
+    "target": "ES2022",
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
     "esModuleInterop": true,

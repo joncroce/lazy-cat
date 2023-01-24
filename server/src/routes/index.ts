@@ -1,4 +1,4 @@
-import { Express } from "express";
+import { Express } from 'express';
 import users from './users';
 
 export default (app: Express) => {
