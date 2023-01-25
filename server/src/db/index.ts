@@ -2,7 +2,7 @@ import { Kysely, PostgresDialect, Generated } from 'kysely';
 import { Pool } from 'pg';
 import Cursor from 'pg-cursor';
 
-import { BaseCat } from '../cats/cat.interface';
+import { BaseCat } from '../cats/interfaces';
 
 interface CatTable extends BaseCat {
 	id: Generated<number>;

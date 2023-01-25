@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
-import { catsRouter } from './cats/cats.router';
+import CatsRouter from './cats/router';
 
 config();
 
@@ -12,7 +12,7 @@ const app = express();
 app.use(morgan('tiny'));
 app.use(express.json());
 
-app.use('/cats', catsRouter);
+app.use('/cats', CatsRouter);
 
 app.listen(port, () => {
 	console.log(`API server listening on port ${port}`);
