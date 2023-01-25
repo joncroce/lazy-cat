@@ -15,14 +15,17 @@
     "dotenv": "^16.0.3",
     "express": "~4.16.1",
     "express-promise-router": "^4.1.1",
+    "kysely": "^0.23.4",
     "morgan": "~1.9.1",
-    "pg": "^8.8.0"
+    "pg": "^8.8.0",
+    "pg-cursor": "^2.7.4"
   },
   "devDependencies": {
     "@types/express": "^4.17.16",
     "@types/morgan": "^1.9.4",
     "@types/node": "^18.11.18",
     "@types/pg": "^8.6.6",
+    "@types/pg-cursor": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "eslint": "^8.32.0",
