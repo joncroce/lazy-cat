@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "migrate:latest": "npx ts-node ./src/db/migrateToLatest.ts",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix",
     "dev": "npx nodemon",

@@ -4,11 +4,11 @@ import Cursor from 'pg-cursor';
 
 import { BaseCat } from '../cats/interfaces';
 
-interface CatTable extends BaseCat {
+export interface CatTable extends BaseCat {
 	id: Generated<number>;
 }
 
-interface Database {
+export interface Database {
 	cat: CatTable;
 }
 
