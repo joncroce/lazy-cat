@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Cat, BaseCat } from './interfaces';
-import { IndexCatsService, ShowCatService, StoreCatService, UpdateCatService } from './service';
+import { IndexCatsService, ShowCatService, StoreCatService, UpdateCatService } from './services';
 
 export const IndexCatsController = async (req: Request, res: Response) => {
 	try {
