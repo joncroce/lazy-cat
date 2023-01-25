@@ -1,6 +1,6 @@
 import express from 'express';
-import { StoreCatValidator, UpdateCatValidator } from './validators';
-import { IndexCatsController, ShowCatController, StoreCatController, UpdateCatController } from './controllers';
+import { DeleteCatValidator, StoreCatValidator, UpdateCatValidator } from './validators';
+import { DeleteCatController, IndexCatsController, ShowCatController, StoreCatController, UpdateCatController } from './controllers';
 
 const router = express.Router();
 
@@ -8,6 +8,7 @@ router
 	.get('/', IndexCatsController)
 	.post('/', StoreCatValidator, StoreCatController)
 	.get('/:id', ShowCatController)
-	.post('/:id', UpdateCatValidator, UpdateCatController);
+	.patch('/:id', UpdateCatValidator, UpdateCatController)
+	.delete('/:id', DeleteCatValidator, DeleteCatController);
 
 export default router;

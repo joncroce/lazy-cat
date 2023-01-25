@@ -25,3 +25,8 @@ export const UpdateCatService = async (id: number, fields: Partial<BaseCat>) =>
     .where('id', '=', id)
     .returning('id')
     .executeTakeFirst();
+
+export const DeleteCatService = async (id: number) =>
+  db.deleteFrom('cat')
+    .where('id', '=', id)
+    .executeTakeFirstOrThrow();

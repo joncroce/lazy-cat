@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Cat, BaseCat } from './interfaces';
-import { IndexCatsService, ShowCatService, StoreCatService, UpdateCatService } from './services';
+import { DeleteCatService, IndexCatsService, ShowCatService, StoreCatService, UpdateCatService } from './services';
 
 export const IndexCatsController = async (req: Request, res: Response) => {
 	try {
@@ -54,5 +54,16 @@ export const UpdateCatController = async (req: Request, res: Response) => {
 	} catch (e: unknown) {
 		console.error(e);
 		return res.status(500).json(`Error updating cat.`);
+	}
+};
+
+export const DeleteCatController = async (req: Request, res: Response) => {
+	try {
+		const result = await DeleteCatService(+req.params.id);
+		console.info(`${result.numDeletedRows} rows deleted from Cat table.`);
+		return res.status(200).json(`Successfully deleted cat.`);
+	} catch (e: unknown) {
+		console.error(e);
+		return res.status(500).json(`Error deleting cat.`);
 	}
 };
