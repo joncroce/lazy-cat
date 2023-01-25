@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Cat, BaseCat } from './interfaces';
-import { DeleteCatService, IndexCatsService, ShowCatService, StoreCatService, UpdateCatService } from './services';
+import { DeleteCatService, IndexCatsService, ReplaceCatService, ShowCatService, StoreCatService, UpdateCatService } from './services';
 
 export const IndexCatsController = async (req: Request, res: Response) => {
 	try {
@@ -44,6 +44,16 @@ export const StoreCatController = async (req: Request, res: Response) => {
 	} catch (e: unknown) {
 		console.error(e);
 		res.status(500).json(`Error creating cat.`);
+	}
+};
+
+export const ReplaceCatController = async (req: Request, res: Response) => {
+	try {
+		const { id } = await ReplaceCatService(+req.params.id, req.body) as Cat;
+		return res.status(200).json(`Successfully replaced cat with ID ${id}`);
+	} catch (e: unknown) {
+		console.error(e);
+		return res.status(500).json(`Error replacing cat.`);
 	}
 };
 

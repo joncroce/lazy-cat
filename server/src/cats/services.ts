@@ -19,12 +19,19 @@ export const StoreCatService = async (cat: BaseCat) =>
     .returning('id')
     .executeTakeFirstOrThrow();
 
+export const ReplaceCatService = async (id: number, fields: BaseCat) =>
+  db.updateTable('cat')
+    .set(fields)
+    .where('id', '=', id)
+    .returning('id')
+    .executeTakeFirstOrThrow();
+
 export const UpdateCatService = async (id: number, fields: Partial<BaseCat>) =>
   db.updateTable('cat')
     .set(fields)
     .where('id', '=', id)
     .returning('id')
-    .executeTakeFirst();
+    .executeTakeFirstOrThrow();
 
 export const DeleteCatService = async (id: number) =>
   db.deleteFrom('cat')
