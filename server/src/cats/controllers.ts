@@ -37,7 +37,7 @@ export const StoreCatController = async (req: Request, res: Response) => {
 		const newCat: BaseCat = req.body;
 		const { id } = await StoreCatService(newCat);
 		if (id) {
-			return res.status(200).json(id);
+			return res.status(201).json(id);
 		}
 
 		res.status(500).json(`Error creating cat. Does a cat with the name ${newCat.name} already exist?`);
